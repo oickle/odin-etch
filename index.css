@@ -1,8 +1,4 @@
-/* for debugging */
-div {
-    border: 1px solid red;
-}
-/*               */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap');
 
 body {
     display: flex;
@@ -12,21 +8,37 @@ body {
 .header {
     text-align: center;
     padding: 10px 0;
+
+    font-family: 'Kanit', sans-serif;
+    font-size: 30px;
 }
 
 .content {
     display: flex;
     height: 100vh;
     align-items: center;
+    gap: 5vw;
 }
 
 .toolbox {
     margin-left: auto;
     padding: 200px 25px;
+    border: 2px solid black;
 }
 
 .canvas {
     flex-shrink: 0;
-    margin: 0 auto;
+
+    display: flex;
+
+    margin-right: auto;
     padding: 150px 100px;
+    min-width: 100px;
+    border: 2px solid black;
+}
+
+.canvas div {
+    background-color: red;
+    width: 25px;
+    height: 25px;
 }
