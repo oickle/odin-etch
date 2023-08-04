@@ -64,6 +64,10 @@ button {
     background-color: rgb(229, 229, 229);
 }
 
+.checkbox {
+    margin-bottom: 10px;
+}
+
 .cell {
     box-sizing: border-box;
     background-color: transparent;

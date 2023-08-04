@@ -1,8 +1,11 @@
 let canvas = document.querySelector('.canvas');
 let changeSizeButton = document.querySelector('.size-button');
 
+let selectedColor = 'black';
+
 let mouseDown = false;
 let hoverMode = false;
+let rainbowMode = false;
 
 // Sets whether the mouse is being held down or not
 function getMouseStatus() {
@@ -12,6 +15,11 @@ function getMouseStatus() {
     document.body.onmouseup = () => {
         mouseDown = false;
     };
+}
+
+// Returns an integer from 0 to max (cannot be max)
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
 }
 
 function fillRow(size){
@@ -62,7 +70,16 @@ function checkPaintDrag(e) {
 // Changes selected cell's color
 function paint(e) {
     const cell = e.target;
-    cell.style['background-color'] = 'black';
+
+    if (rainbowMode) {
+        let r = getRandomInt(256);
+        let g = getRandomInt(256);
+        let b = getRandomInt(256);
+        cell.style['background-color'] = `rgb(${r}, ${g}, ${b})`;
+    }
+    else {
+        cell.style['background-color'] = selectedColor;
+    }
 }
 
 // Called from html 'onclick' function
@@ -80,6 +97,12 @@ function toggleHover() {
     hoverMode = !hoverMode;
 }
 
+// Toggles rainbow mode when checkbox is clicked
+function toggleRainbow() {
+    rainbowMode = !rainbowMode;
+}
+
+// Initial set up functions
 getMouseStatus();
 fillCanvas(16);
 
