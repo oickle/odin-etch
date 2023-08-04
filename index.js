@@ -1,5 +1,5 @@
 let canvas = document.querySelector('.canvas');
-let changeSizeButton = document.querySelector('.size-button');
+let colorPicker = document.querySelector('.color-picker');
 
 let selectedColor = 'black';
 
@@ -29,7 +29,6 @@ function fillRow(size){
         
         // Cell sizes change to fit the 400px by 400px grid, rather than the grid itself changing
         let scale = 400 / size // Calculates the maximum size for the cells
-        console.log(scale);
         newCell.style['width'] = `${scale}px`;
         newCell.style['height'] = `${scale}px`;
         newCell.classList.add('cell');
@@ -102,7 +101,12 @@ function toggleRainbow() {
     rainbowMode = !rainbowMode;
 }
 
+// Changes the color variables to whatever is currently set in the color picker
+function setColor() {
+    selectedColor = colorPicker.value;
+}
+
 // Initial set up functions
 getMouseStatus();
 fillCanvas(16);
-
+setColor();

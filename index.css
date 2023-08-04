@@ -43,7 +43,25 @@ button {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+.color-picker {
+    align-self: center;
+
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    margin: 25px 0;
+
+    width: 75px;
+    height: 75px;
+}
+
+.checkbox {
+    margin-bottom: 10px;
 }
 
 .size-button {
@@ -64,9 +82,6 @@ button {
     background-color: rgb(229, 229, 229);
 }
 
-.checkbox {
-    margin-bottom: 10px;
-}
 
 .cell {
     box-sizing: border-box;
